@@ -1,4 +1,4 @@
-package com.tabadegacontrol.app.Suppliers.model;
+package com.tabadegacontrol.app.suppliers.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
