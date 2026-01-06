@@ -2,13 +2,11 @@ package com.tabadegacontrol;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 public class TabAdegaControlRegisterApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TabAdegaControlRegisterApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TabAdegaControlRegisterApplication.class, args);
+    }
 }

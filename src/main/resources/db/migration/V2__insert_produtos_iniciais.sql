@@ -1,20 +1,18 @@
-INSERT INTO produto (
-    nome,
-    categoria,
-    marca,
-    quantidade,
-    preco_venda,
-    preco_custo,
-    estoque_atual,
-    data_criacao
-) VALUES
-      ('Vinho Tinto Reserva', 'Vinho', 'Miolo', 50, 89.90, 55.00, 50, CURRENT_DATE),
-      ('Vinho Branco Seco', 'Vinho', 'Salton', 40, 69.90, 42.00, 40, CURRENT_DATE),
-      ('Vinho Rosé', 'Vinho', 'Aurora', 30, 59.90, 38.00, 30, CURRENT_DATE),
-      ('Espumante Brut', 'Espumante', 'Chandon', 25, 119.90, 80.00, 25, CURRENT_DATE),
-      ('Espumante Moscatel', 'Espumante', 'Salton', 35, 74.90, 48.00, 35, CURRENT_DATE),
-      ('Whisky 12 Anos', 'Destilado', 'Johnnie Walker', 20, 189.90, 140.00, 20, CURRENT_DATE),
-      ('Vodka Premium', 'Destilado', 'Absolut', 45, 79.90, 52.00, 45, CURRENT_DATE),
-      ('Gin London Dry', 'Destilado', 'Tanqueray', 30, 129.90, 90.00, 30, CURRENT_DATE),
-      ('Cerveja Artesanal IPA', 'Cerveja', 'Colorado', 60, 19.90, 12.00, 60, CURRENT_DATE),
-      ('Licor Amarula', 'Licor', 'Amarula', 15, 109.90, 75.00, 15, CURRENT_DATE);
+INSERT INTO produto (nome,
+                     categoria,
+                     marca,
+                     quantidade,
+                     preco_venda,
+                     preco_custo,
+                     estoque_atual,
+                     data_criacao)
+VALUES ('Vinho Tinto Reserva', 'Vinho', 'Miolo', 50, 89.90, 55.00, 50, CURRENT_DATE),
+       ('Vinho Branco Seco', 'Vinho', 'Salton', 40, 69.90, 42.00, 40, CURRENT_DATE),
+       ('Vinho Rosé', 'Vinho', 'Aurora', 30, 59.90, 38.00, 30, CURRENT_DATE),
+       ('Espumante Brut', 'Espumante', 'Chandon', 25, 119.90, 80.00, 25, CURRENT_DATE),
+       ('Espumante Moscatel', 'Espumante', 'Salton', 35, 74.90, 48.00, 35, CURRENT_DATE),
+       ('Whisky 12 Anos', 'Destilado', 'Johnnie Walker', 20, 189.90, 140.00, 20, CURRENT_DATE),
+       ('Vodka Premium', 'Destilado', 'Absolut', 45, 79.90, 52.00, 45, CURRENT_DATE),
+       ('Gin London Dry', 'Destilado', 'Tanqueray', 30, 129.90, 90.00, 30, CURRENT_DATE),
+       ('Cerveja Artesanal IPA', 'Cerveja', 'Colorado', 60, 19.90, 12.00, 60, CURRENT_DATE),
+       ('Licor Amarula', 'Licor', 'Amarula', 15, 109.90, 75.00, 15, CURRENT_DATE);
