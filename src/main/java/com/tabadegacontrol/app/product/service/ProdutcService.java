@@ -5,7 +5,6 @@ import com.tabadegacontrol.app.product.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,20 +18,14 @@ public class ProdutcService {
 
     private final ProductRepository productRepository;
 
-    @Autowired
-    public ProdutcService(ProductRepository productRepository, Product Product) {
+    public ProdutcService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
     @Transactional
-    public void createProduct(Product Product) {
-        logger.info("Criando um novo Product", Product);
-        try {
-            productRepository.save(Product);
-        } catch (Exception e) {
-            throw new RuntimeException("Erro ao adicionar um novo Product", e);
-        }
-
+    public Product createProduct(Product product) {
+        logger.info("Criando novo produto: {}", product.getNome());
+        return productRepository.save(product);
     }
 
     public List<Product> getAllProduct() {
@@ -41,32 +34,32 @@ public class ProdutcService {
 
     public Optional<Product> getProductByid(Long id) {
         return productRepository.findById(id);
-
     }
 
-    public void saveProduct(Product saveProduct) {
-        productRepository.save(saveProduct);
-    }
-
-
+    @Transactional
     public void deletProduct(Long id) {
+        if (!productRepository.existsById(id)) {
+            throw new EntityNotFoundException("Product não encontrado com ID: " + id);
+        }
         productRepository.deleteById(id);
     }
 
-    public Product updateProduct(Long id, Product ProductAtualizado) {
+    @Transactional
+    public Product updateProduct(Long id, Product productAtualizado) {
 
-        Product ProductExistente = productRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Product não encontrado com ID: " + id));
+        Product productExistente = productRepository.findById(id)
+                .orElseThrow(() ->
+                        new EntityNotFoundException("Product não encontrado com ID: " + id)
+                );
 
-        ProductExistente.setNome(ProductAtualizado.getNome());
-        ProductExistente.setCategoria(ProductAtualizado.getCategoria());
-        ProductExistente.setQuantidade(ProductExistente.getQuantidade());
-        ProductExistente.setPrecoCusto(ProductAtualizado.getPrecoCusto());
-        ProductExistente.setMarca(ProductAtualizado.getMarca());
-        ProductExistente.setEstoqueAtual((ProductAtualizado.getEstoqueAtual()));
-        return productRepository.save(ProductExistente);
+        productExistente.setNome(productAtualizado.getNome());
+        productExistente.setCategoria(productAtualizado.getCategoria());
+        productExistente.setMarca(productAtualizado.getMarca());
+        productExistente.setQuantidade(productAtualizado.getQuantidade());
+        productExistente.setPrecoCusto(productAtualizado.getPrecoCusto());
+        productExistente.setPrecoVenda(productAtualizado.getPrecoVenda());
+        productExistente.setEstoqueAtual(productAtualizado.getEstoqueAtual());
+
+        return productRepository.save(productExistente);
     }
-
-
 }
-
