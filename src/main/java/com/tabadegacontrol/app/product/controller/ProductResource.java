@@ -1,4 +1,4 @@
-package com.tabadegacontrol.app.product.resource;
+package com.tabadegacontrol.app.product.controller;
 
 import com.tabadegacontrol.app.product.service.ProdutcService;
 import com.tabadegacontrol.app.product.model.Product;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-
 @RestController
 @RequestMapping("/v1")
 public class ProductResource {
@@ -18,24 +17,18 @@ public class ProductResource {
 
     private Product product;
 
-    private final ProdutcService produtcService ;
+    private final ProdutcService produtcService;
 
     @Autowired
-    public ProductResource (ProdutcService produtcService){
+    public ProductResource(ProdutcService produtcService) {
         this.produtcService = produtcService;
     }
-    @GetMapping("/status")
-    public ResponseEntity<String> TestServiceEndpoint(String retornoStatus) {
-        retornoStatus = "Service is running";
-        return  ResponseEntity.ok(retornoStatus);
+
+    @GetMapping("/1")
+    public ResponseEntity<List<Product>> getAllProduct() {
+        List<Product> Products = produtcService.getAllProduct();
+        return new ResponseEntity<>(Products, HttpStatus.OK);
     }
-
-
-@GetMapping
-public ResponseEntity<List<Product>> getAllProduct() {
-    List<Product> Products = produtcService.getAllProduct();
-    return new ResponseEntity<>(Products, HttpStatus.OK);
-}
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
