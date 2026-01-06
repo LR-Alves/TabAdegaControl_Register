@@ -1,4 +1,4 @@
-INSERT INTO produto (nome,
+INSERT INTO product (nome,
                      categoria,
                      marca,
                      quantidade,
