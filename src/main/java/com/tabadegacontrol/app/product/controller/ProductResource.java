@@ -23,7 +23,7 @@ public class ProductResource {
         return ResponseEntity.ok("Product Service is up and running!");
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
         return ResponseEntity.ok(productService.getAllProduct());
     }

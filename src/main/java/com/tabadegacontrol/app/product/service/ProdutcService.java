@@ -24,7 +24,7 @@ public class ProdutcService {
 
     @Transactional
     public Product createProduct(Product product) {
-        logger.info("Criando novo produto: {}", product.getNome());
+        logger.info("created new product: {}", product.getNome());
         return productRepository.save(product);
     }
 
