@@ -1,4 +1,4 @@
-package com.tabadegacontrol.app.product.model;
+package com.tabadegacontrol.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

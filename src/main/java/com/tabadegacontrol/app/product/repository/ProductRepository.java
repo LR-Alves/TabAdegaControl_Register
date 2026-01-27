@@ -1,7 +1,7 @@
 package com.tabadegacontrol.app.product.repository;
 
 
-import com.tabadegacontrol.app.product.model.Product;
+import com.tabadegacontrol.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

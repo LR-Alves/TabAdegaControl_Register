@@ -1,6 +1,6 @@
 package com.tabadegacontrol.app.product.service;
 
-import com.tabadegacontrol.app.product.model.Product;
+import com.tabadegacontrol.domain.Product;
 import com.tabadegacontrol.app.product.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProdutcService {
+public class ProductService {
 
-    private static final Logger logger = LoggerFactory.getLogger(ProdutcService.class);
+    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     private final ProductRepository productRepository;
 
-    public ProdutcService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

@@ -1,7 +1,7 @@
-package com.tabadegacontrol.app.product.controller;
+package com.tabadegacontrol.infrastructure.adapter.input.rest;
 
-import com.tabadegacontrol.app.product.model.Product;
-import com.tabadegacontrol.app.product.service.ProdutcService;
+import com.tabadegacontrol.domain.Product;
+import com.tabadegacontrol.app.product.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/products")
-public class ProductResource {
+public class ProductRestController{
 
-    private final ProdutcService productService;
+    private final ProductService productService;
 
-    public ProductResource(ProdutcService productService) {
+    public ProductRestController(ProductService productService) {
         this.productService = productService;
     }
 

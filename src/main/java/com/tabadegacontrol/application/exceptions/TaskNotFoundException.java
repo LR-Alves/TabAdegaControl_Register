@@ -1,4 +1,4 @@
-package com.tabadegacontrol.exceptions;
+package com.tabadegacontrol.application.exceptions;
 
 public class TaskNotFoundException extends RuntimeException {
     public TaskNotFoundException(Long id) {
